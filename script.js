@@ -171,6 +171,9 @@ function volar() {
         gameAudio.pause();
         tl.pause();
         bl.pause();
+        ducks.forEach((d)=>{
+          d.style.pointerEvents="none"
+        });
         whiteScreen.style.display='none';
         shotAudio.muted="true";
         gameOverAudio.muted="true";
@@ -219,6 +222,10 @@ function finish() {
   bulletArr.forEach((e)=>{
     e.style.visibility="hidden";
   })
+  let ducks = document.querySelectorAll(".duck");
+  ducks.forEach((d)=>{
+    d.style.pointerEvents="none"
+  });
   crosshair.style.display="none";
   gameOver.style.display = "flex";
   finalScore.value = contador;
